@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~angular-tree-component/dist/angular-tree-component.css';
+
+tree-node-expander {
+  display: none;
+}
+
+.node-content-wrapper {
+  width: 100%;
+}
+
+.div-l {
+  float: left;
+  width: 45%;
+}
+
+.div-r {
+  float: right;
+  width: 45%;
+  text-align: right;
+}

@@ -1,0 +1,28 @@
+<div style="width: 350px; margin-left: 15px">
+  <nz-input-group [nzSize]="'small'" [nzSuffix]="suffixIconSearch">
+    <input type="text" #searchVal  (change)="filterTree(searchVal.value)" nz-input placeholder="Search"  />
+  </nz-input-group>
+  <ng-template #suffixIconSearch>
+    <i nz-icon type="search"></i>
+  </ng-template>
+
+    <tree-root #tree
+               (initialize)="onInit(tree)"  [nodes]="nodes" [options]="options" (stateChange)="saveState()">
+      <ng-template #treeNodeTemplate let-node let-index="index" style="width: 300px">
+        <div  class="w-100" >
+          <div (click)="node.isExpanded ? node.collapse() : node.expand()"
+               class="float-left" ><i nz-icon [nzType]="node.isExpanded ? 'down' : 'right'" class="small expander"  [ngClass]="node.data.id === 1 ? 'rootIcon' : ''" *ngIf=" node.data.children"></i>
+               <i nz-icon nzType="minus" class="small expander" style="margin-left: 10px"  *ngIf=" !node.data.children "></i>
+          </div>
+          <span><div class="div-l overflow_h"><img [src]="node.data.image" [ngStyle]="{backgroundColor : node.data.id === 2 ? 'orange' : ''} " >
+            <span style="margin-right: 50px;" [ngStyle]="node.data.id === 1 ? {'color' :  'blue' , 'font-weight' : 'bold'} : ''">
+              {{ node.data.name }}
+            </span>
+          </div>
+            <div class="div-r"><span  class="small" *ngIf="node.data.children">20/02/2018</span></div></span>
+        </div>
+      </ng-template>
+  </tree-root>
+  <!--<button (click)="show(tree)">show</button>-->
+
+</div>

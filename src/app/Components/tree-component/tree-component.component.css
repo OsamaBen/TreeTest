@@ -1,0 +1,24 @@
+img {
+  margin-right: 5px;
+}
+
+span {
+  font-size: 12px;
+  width: 100%;
+}
+
+.expander {
+  font-size: 7px;margin-right: 5px;position: relative;bottom: 3px;
+}
+
+.overflow_h {
+  white-space: nowrap!important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rootIcon  {
+  position: relative;
+  left: 10px;
+  bottom: 5px;
+}
