@@ -11,11 +11,11 @@
       <ng-template #treeNodeTemplate let-node let-index="index" style="width: 300px">
         <div  class="w-100" >
           <div (click)="node.isExpanded ? node.collapse() : node.expand()"
-               class="float-left" ><i nz-icon [nzType]="node.isExpanded ? 'down' : 'right'" class="small expander"  [ngClass]="node.data.id === 1 ? 'rootIcon' : ''" *ngIf=" node.data.children"></i>
+               class="float-left" ><i nz-icon [nzType]="node.isExpanded ? 'down' : 'right'" class="small expander rootIcon"   *ngIf=" node.data.children"></i>
                <i nz-icon nzType="minus" class="small expander" style="margin-left: 10px"  *ngIf=" !node.data.children "></i>
           </div>
-          <span><div class="div-l overflow_h"><img [src]="node.data.image" [ngStyle]="{backgroundColor : node.data.id === 2 ? 'orange' : ''} " >
-            <span style="margin-right: 50px;" [ngStyle]="node.data.id === 1 ? {'color' :  'blue' , 'font-weight' : 'bold'} : ''">
+          <span><div class="div-l overflow_h"><img [src]="node.data.image" style="margin-left: 8px" >
+            <span style="margin-right: 50px;" [ngStyle]="[1,17,24].includes(node.data.id) ? {'color' :  'blue' , 'font-weight' : 'bold'} : ''">
               {{ node.data.name }}
             </span>
           </div>

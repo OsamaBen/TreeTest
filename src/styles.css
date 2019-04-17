@@ -19,3 +19,31 @@ tree-node-expander {
   width: 45%;
   text-align: right;
 }
+
+.customBox {
+  background: #002140;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5%;
+  padding: 8px 10px;
+  box-shadow: 0 10px 40px 0 #B0C1D9;
+}
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+.connectingConnectorLabel {
+  height: 28px;
+  width: 100px;
+  border-radius: 13px;
+  color: #00334d;
+  text-align: center;
+  z-index:3 !important;
+  left: 50% !important;
+  background-color: rgba(139, 255, 149, 0.98);
+}

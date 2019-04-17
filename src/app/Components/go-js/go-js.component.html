@@ -1,0 +1,21 @@
+<div id="myDiagramDiv"
+     style="width:800px; height:500px; background-color: #DAE4E4;margin-bottom: 5px">
+</div>
+<br>
+
+<div style="display: flex;margin-left: 5px">
+  <label style="width: 300px;"> Name : </label>
+<nz-input-group [nzAddOnAfterIcon]="'profile'" [nzSize]="'small'" style="width: 500px" >
+  <input type="text" nz-input #name />
+</nz-input-group>
+</div>
+
+<div  style="display: flex; margin-left: 5px">
+  <label style="width: 300px;"> Picture path : </label>
+<nz-input-group [nzAddOnAfterIcon]="'file'" [nzSize]="'small'" style="width: 500px" >
+  <input type="text" nz-input #picture />
+</nz-input-group>
+</div>
+<div style="margin-left: 5px;">
+  <button class="btn btn-primary" (click)="addNode(name.value, picture.value)">Add</button>
+</div>

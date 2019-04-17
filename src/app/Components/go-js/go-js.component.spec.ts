@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MyTreeComponent } from './my-tree.component';
+import { GoJsComponent } from './go-js.component';
 
-describe('MyTreeComponent', () => {
-  let component: MyTreeComponent;
-  let fixture: ComponentFixture<MyTreeComponent>;
+describe('GoJsComponent', () => {
+  let component: GoJsComponent;
+  let fixture: ComponentFixture<GoJsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyTreeComponent ]
+      declarations: [ GoJsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MyTreeComponent);
+    fixture = TestBed.createComponent(GoJsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

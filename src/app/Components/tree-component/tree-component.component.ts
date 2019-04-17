@@ -15,57 +15,81 @@ export class TreeComponentComponent implements OnInit , OnDestroy {
   nodes = [
     {
       id: 1,
-      name: 'Transactions',
+      name: 'Template',
       image: '',
       children: [
         {
           id: 2,
-          name: 'Templates',
-          image: 'assets/icons/template.png',
+          name: 'Transactions',
+          image: 'assets/icons/transaction.png',
           children: [
-            { id: 3, name: 'tmp1', image: 'assets/icons/standard.png' },
-            { id: 4, name: 'tmp2', image: 'assets/icons/standard.png' }
+            {id: 3, name: 'tmp1', image: 'assets/icons/standard.png'},
+            {id: 4, name: 'tmp2', image: 'assets/icons/standard.png'}
           ]
         },
         {
           id: 5,
-          name: 'Achraf Ben Abdallah',
-          image: 'assets/icons/user.png',
+          name: 'Structures',
+          image: 'assets/icons/structure.png',
           children: [
-            { id: 6, name: 'Francais des jeux', image: 'assets/icons/school.png' },
-            { id: 7, name: 'LPT ADC Cockpit 48', image: 'assets/icons/file.png' }
+            {id: 6, name: 'Struce1', image: 'assets/icons/school.png'},
+            {id: 7, name: 'Struct2', image: 'assets/icons/file.png'}
           ]
         },
+      ]
+    },
+    {
+      id: 17,
+      name: 'Categorized  Transactions',
+      image: '',
+      children: [
         {
-          id: 8,
-          name: 'Fahmi Ben Falah',
-          image: 'assets/icons/user.png',
+          id: 18,
+          name: 'Country',
+          image: 'assets/icons/flag.png',
           children: [
-            { id: 9, name: 'Francais des jeux', image: 'assets/icons/school.png' },
-            { id: 10, name: 'LPT ADC Cockpit 48', image: 'assets/icons/file.png' }
+            {id: 19,
+             name: 'N -Cedant',
+             image: 'assets/icons/standard.png',
+             children: [
+                {id: 20,
+                  name: 'N- Program',
+                  image: 'assets/icons/standard.png',
+                  children: [
+                    {id: 21,
+                      name: 'N- UW Year',
+                      image: 'assets/icons/standard.png',
+                      children: [
+                        {id: 22,
+                          name: 'N- Transactions',
+                          image: 'assets/icons/standard.png'
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
           ]
         },
+      ]
+    },
+    {
+      id: 24,
+      name: 'Draft',
+      image: '',
+      children: [
         {
-          id: 11,
-          name: 'Sara Djegjig',
+          id: 25,
+          name: 'User 1',
           image: 'assets/icons/user.png',
           children: [
-            { id: 12, name: 'Francais des jeux', image: 'assets/icons/school.png' },
-            { id: 13, name: 'LPT ADC Cockpit 48', image: 'assets/icons/file.png' }
+            {id: 26, name: 'Transactions', image: 'assets/icons/transaction.png'},
+            {id: 27, name: 'Structures', image: 'assets/icons/structure.png'}
           ]
         },
-        {
-          id: 14,
-          name: 'James Donald',
-          image: 'assets/icons/user.png',
-          children: [
-            { id: 15, name: 'Francais des jeux', image: 'assets/icons/school.png' },
-            { id: 16, name: 'LPT ADC Cockpit 48', image: 'assets/icons/file.png' }
-          ]
-        }
       ]
     }
-
   ];
   options: ITreeOptions = {
     isExpandedField: 'expanded',
