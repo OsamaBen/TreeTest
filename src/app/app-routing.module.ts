@@ -5,6 +5,7 @@ import {TreeComponentComponent} from './Components/tree-component/tree-component
 import {JsPlumbComponent} from './Components/js-plumb/js-plumb.component';
 import {GoJsComponent} from './Components/go-js/go-js.component';
 import {OfficeComponent} from './Components/office/office.component';
+import {SpreadJsComponent} from './Components/spread-js/spread-js.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'tabSet',
     component : OfficeComponent
+  },
+  {
+    path: 'spreadJs',
+    component : SpreadJsComponent
   },
   {
     path: '**',

@@ -14,6 +14,8 @@ import en from '@angular/common/locales/en';
 import {JsPlumbComponent} from './Components/js-plumb/js-plumb.component';
 import { GoJsComponent } from './Components/go-js/go-js.component';
 import { OfficeComponent } from './Components/office/office.component';
+import { SpreadJsComponent } from './Components/spread-js/spread-js.component';
+import { SpreadSheetsModule } from '@grapecity/spread-sheets-angular';
 
 registerLocaleData(en);
 
@@ -24,17 +26,19 @@ registerLocaleData(en);
     JsPlumbComponent,
     GoJsComponent,
     OfficeComponent,
+    SpreadJsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    SpreadSheetsModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
     HttpClientModule,
     NgZorroAntdModule.forRoot(),
     TreeModule.forRoot(),
-    NgZorroAntdModule
+    NgZorroAntdModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
