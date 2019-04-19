@@ -4,6 +4,7 @@ import {AppComponent} from './app.component';
 import {TreeComponentComponent} from './Components/tree-component/tree-component.component';
 import {JsPlumbComponent} from './Components/js-plumb/js-plumb.component';
 import {GoJsComponent} from './Components/go-js/go-js.component';
+import {OfficeComponent} from './Components/office/office.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'goJs',
     component : GoJsComponent
+  },
+  {
+    path: 'tabSet',
+    component : OfficeComponent
   },
   {
     path: '**',

@@ -13,6 +13,7 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import {JsPlumbComponent} from './Components/js-plumb/js-plumb.component';
 import { GoJsComponent } from './Components/go-js/go-js.component';
+import { OfficeComponent } from './Components/office/office.component';
 
 registerLocaleData(en);
 
@@ -22,6 +23,7 @@ registerLocaleData(en);
     TreeComponentComponent,
     JsPlumbComponent,
     GoJsComponent,
+    OfficeComponent,
   ],
   imports: [
     BrowserModule,

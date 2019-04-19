@@ -128,14 +128,14 @@ export class TreeComponentComponent implements OnInit , OnDestroy {
 
   constructor() { this.stateStorage = new Subject<any>(); }
   ngOnInit() {
-    if (localStorage.treeState) {
-      this.treeComponent.treeModel.setState(JSON.parse(localStorage.treeState));
+    if (sessionStorage.treeState) {
+      this.treeComponent.treeModel.setState(JSON.parse(sessionStorage.treeState));
     }
-    this.stateStorage.subscribe(state => localStorage.treeState = JSON.stringify(state) );
+    this.stateStorage.subscribe(state => sessionStorage.treeState = JSON.stringify(state) );
   }
 
   show(tr) {
-    console.log('tree ', JSON.parse(localStorage.treeState));
+    console.log('tree ', JSON.parse(sessionStorage.treeState));
   }
 
   saveState() {
@@ -143,7 +143,7 @@ export class TreeComponentComponent implements OnInit , OnDestroy {
   }
 
   ngOnDestroy() {
-    localStorage.treeState = JSON.stringify(this.treeComponent.treeModel.getState());
+    sessionStorage.treeState = JSON.stringify(this.treeComponent.treeModel.getState());
   }
 
   filterTree(sv) {

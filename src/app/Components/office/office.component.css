@@ -1,0 +1,7 @@
+::ng-deep .ant-tabs-nav .ant-tabs-tab-active {
+  color: blue;
+}
+
+::ng-deep .ant-tabs-top .ant-tabs-ink-bar-animated {
+  background-color: blue;
+}

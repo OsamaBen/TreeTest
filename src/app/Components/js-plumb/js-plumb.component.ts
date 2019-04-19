@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {jsPlumb} from 'jsplumb';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-js-plumb',
@@ -10,28 +11,30 @@ export class JsPlumbComponent implements OnInit {
   buttonName = 'Connect' ;
   jsPlumbInstance;
   isConnected = false;
+  jsPlumbSubject: Subject<any> ;
   constructor() {
+    this.jsPlumbSubject = new Subject<any>();
   }
 
   ngOnInit() {
-    this.jsPlumbInstance = jsPlumb.getInstance();
+     this.jsPlumbInstance = jsPlumb.getInstance();
   }
 
   showConnectOnClick() {
-    console.log('jsplumb', this.jsPlumbInstance);
     this.isConnected = ! this.isConnected;
-    if ( this.isConnected) {
+    if (this.isConnected) {
       this.buttonName = 'Dissconnect';
-      this.connectSourceToTargetUsingJSPlumb();
+      this.connectSourceToTarget();
     } else {
       this.buttonName = 'Connect';
       this.jsPlumbInstance.reset();
     }
   }
 
-  connectSourceToTargetUsingJSPlumb() {
+  connectSourceToTarget() {
     let labelName;
     labelName = 'connected';
+    console.log('jsplumbConnect', this.jsPlumbInstance);
     this.jsPlumbInstance.connect({
       // connector: ['Flowchart', {stub: [212, 67], cornerRadius: 1, alwaysRespectStubs: true}],
       source: 'Source',
