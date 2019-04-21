@@ -1,0 +1,42 @@
+.resizable {
+  min-width: 40px;
+  padding-right: 10px;
+  position: relative;
+}
+
+.grabber {
+  cursor: col-resize;
+  position: absolute;
+  background-color: #40c1ff26;
+  width: 9px;
+  height: 100%;
+  right: 0;
+  top: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(left, #96A6BF, #63738C);
+  box-shadow: inset 0 0 1px 1px #5C6670;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #eee;
+  box-shadow: 0 0 1px 1px #bbb, inset 0 0 7px rgba(0,0,0,0.3)
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(left, #8391A6, #536175);
+}
+
+li {
+  font-size: 11px;
+  font-weight: bold;
+  color: black;
+}

@@ -1,0 +1,15 @@
+:host {
+  min-width: 40px;
+  padding-right: 10px;
+  position: relative;
+}
+
+.grabber {
+  cursor: col-resize;
+  position: absolute;
+  background-color: black;
+  width: 5px;
+  height: 100%;
+  right: 0;
+  top: 0;
+}

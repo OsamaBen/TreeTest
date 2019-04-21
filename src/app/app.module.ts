@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,9 @@ import { GoJsComponent } from './Components/go-js/go-js.component';
 import { OfficeComponent } from './Components/office/office.component';
 import { SpreadJsComponent } from './Components/spread-js/spread-js.component';
 import { SpreadSheetsModule } from '@grapecity/spread-sheets-angular';
+import { ExcelTabsetMergeComponent } from './Components/excel-tabset-merge/excel-tabset-merge.component';
+import {GrabberDirective, ResizableDirective} from './Components/excel-tabset-merge/resizable-derictives/resizable';
+import { ResizableModule } from 'angular-resizable-element';
 
 registerLocaleData(en);
 
@@ -27,7 +30,11 @@ registerLocaleData(en);
     GoJsComponent,
     OfficeComponent,
     SpreadJsComponent,
+    ExcelTabsetMergeComponent,
+    ResizableDirective,
+    GrabberDirective
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,6 +46,7 @@ registerLocaleData(en);
     NgZorroAntdModule.forRoot(),
     TreeModule.forRoot(),
     NgZorroAntdModule,
+    ResizableModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

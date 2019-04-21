@@ -27,6 +27,7 @@
     "@grapecity/spread-sheets": "^12.1.0",
     "@grapecity/spread-sheets-angular": "^12.1.0",
     "@grapecity/spread-sheets-charts": "^12.1.0",
+    "angular-resizable-element": "^3.2.4",
     "angular-tree-component": "^8.3.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
