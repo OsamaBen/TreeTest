@@ -47,3 +47,6 @@ tree-node-expander {
   left: 50% !important;
   background-color: rgba(139, 255, 149, 0.98);
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -19,6 +19,15 @@ import { SpreadSheetsModule } from '@grapecity/spread-sheets-angular';
 import { ExcelTabsetMergeComponent } from './Components/excel-tabset-merge/excel-tabset-merge.component';
 import {GrabberDirective, ResizableDirective} from './Components/excel-tabset-merge/resizable-derictives/resizable';
 import { ResizableModule } from 'angular-resizable-element';
+import {
+  MatButtonModule,
+  MatCheckboxModule, MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatSelectModule,
+  MatSidenavModule
+} from "@angular/material";
+import {GridsterModule} from "angular-gridster2";
 
 registerLocaleData(en);
 
@@ -46,7 +55,9 @@ registerLocaleData(en);
     NgZorroAntdModule.forRoot(),
     TreeModule.forRoot(),
     NgZorroAntdModule,
-    ResizableModule
+    ResizableModule,
+    GridsterModule,
+    MatIconModule, MatButtonModule, MatSelectModule, MatInputModule, MatCheckboxModule, MatSidenavModule, MatListModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

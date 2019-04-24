@@ -1,26 +1,136 @@
-<div class="container-fluid " style="padding-top: 15px">
-  <div class="row">
-    <div class="col-12">
-      <span style="font-weight: bold">Statistics</span>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-    <nz-tabset>
-      <nz-tab nzTitle="Parameters">
-        <div style="width: 100%;height: 500px;background-color: #cccccc">
-        </div>
-      </nz-tab>
-      <nz-tab nzTitle="Input Connectivity">
-        <div style="width: 100%;height: 500px;background-color: #cccccc">
-        </div>
-      </nz-tab>
-      <nz-tab nzTitle="OutPut Connectivity">
-        <div style="width: 100%;height: 500px;background-color: #cccccc">
-        </div>
-      </nz-tab>
-    </nz-tabset>
-  </div>
-  </div>
+<div class="options">
+  <a mat-raised-button href="https://github.com/tiberiuzuld/angular-gridster2/tree/master/src/app/sections/home"
+     target="_blank" class="source-code-button">
+    <mat-icon>open_in_new</mat-icon>
+    Source
+  </a>
 </div>
+<div class="options-header">
+  <mat-form-field>
+    <mat-select aria-label="Grid type" [(ngModel)]="options.gridType" (ngModelChange)="changedOptions()"
+                placeholder="Grid Type">
+      <mat-option value="fit">Fit to screen</mat-option>
+      <mat-option value="scrollVertical">Scroll Vertical</mat-option>
+      <mat-option value="scrollHorizontal">Scroll Horizontal</mat-option>
+      <mat-option value="fixed">Fixed</mat-option>
+      <mat-option value="verticalFixed">Vertical Fixed</mat-option>
+      <mat-option value="horizontalFixed">Horizontal Fixed</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select aria-label="Display grid lines" [(ngModel)]="options.displayGrid"
+                placeholder="Display grid lines"
+                (ngModelChange)="changedOptions()">
+      <mat-option value="always">Always</mat-option>
+      <mat-option value="onDrag&Resize">On Drag & Resize</mat-option>
+      <mat-option value="none">None</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-checkbox [(ngModel)]="options.swap" (ngModelChange)="changedOptions()">
+    Swap Items
+  </mat-checkbox>
+  <mat-checkbox [(ngModel)]="options.pushItems" (ngModelChange)="changedOptions()">
+    Push Items
+  </mat-checkbox>
+  <mat-checkbox [(ngModel)]="options.draggable.enabled" *ngIf="options.draggable" (ngModelChange)="changedOptions()">
+    Drag Items
+  </mat-checkbox>
+  <mat-checkbox [(ngModel)]="options.resizable.enabled" *ngIf="options.resizable" (ngModelChange)="changedOptions()">
+    Resize Items
+  </mat-checkbox>
+  <mat-checkbox [(ngModel)]="options.pushResizeItems" (ngModelChange)="changedOptions()">
+    Push Resize Items
+  </mat-checkbox>
+  <mat-form-field>
+    <input matInput [(ngModel)]="options.margin" min="0" max="30" step="1" type="number" placeholder="Margin"
+           (ngModelChange)="changedOptions()">
+  </mat-form-field>
+  <mat-checkbox [(ngModel)]="options.outerMargin" (ngModelChange)="changedOptions()">Outer Margin</mat-checkbox>
+  <mat-form-field>
+    <input matInput [(ngModel)]="options.mobileBreakpoint" type="number" placeholder="Mobile Breakpoint"
+           (ngModelChange)="changedOptions()">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="options.fixedColWidth" type="number" placeholder="Fixed Col Width"
+           (ngModelChange)="changedOptions()">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="options.fixedRowHeight" type="number" placeholder="Fixed Row Height"
+           (ngModelChange)="changedOptions()">
+  </mat-form-field>
+  <button mat-mini-fab (click)="addItem()" class="add-button cols-2">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button (click)="changeTo2Panels()" class="btn btn-success">2 Panels</button>
+  <button class="btn btn-primary" (click)="changeTo4Panels()">4 Panels</button>
+</div>
+
+<gridster [options]="options">
+  <gridster-item [item]="item" *ngFor="let item of dashboard" [ngStyle]="{'border-top': '5px solid','border-color': item.borderColor} " style="width: 100%;height: 100%;padding-top: 15px">
+    <div class="button-holder">
+      <div class="item-buttons" style="margin-top: 20px;text-align: right;width: 100%">
+        <button mat-icon-button mat-raised-button class="drag-handler">
+          <mat-icon>open_with</mat-icon>
+        </button>
+        <button mat-icon-button mat-raised-button class="remove-button" (mousedown)="removeItem($event, item)"
+                (touchstart)="removeItem($event, item)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <div class="gridster-item-content" *ngIf="item.ofType === 'cockpit'" >
+        <div class="stuff">
+          <span style="font-size: 15px;font-weight: bold;padding-left: 15px">Cockpit</span>
+          <ul nz-menu [nzMode]="'horizontal'" style="line-height: 25px;">
+            <li nz-menu-item > File </li>
+            <li nz-menu-item > Home </li>
+            <li nz-menu-item > Insert </li>
+            <li nz-menu-item> Formules </li>
+            <li nz-menu-item> Data </li>
+            <li nz-menu-item> View </li>
+            <li nz-menu-item> Table </li>
+            <li nz-menu-item> Chart </li>
+          </ul>
+          <gc-spread-sheets  [hostStyle]="hostStyle" [backColor]="spreadBackColor" [grayAreaBackColor]="spreadForeColor"
+                             (workbookInitialized)="workbookInit($event)" >
+          </gc-spread-sheets>
+        </div>
+      </div>
+      <div class="gridster-item-content" *ngIf="item.ofType === 'statistics'">
+        <div class="stuff" style="width: 100%">
+          <span style="font-size: 15px;font-weight: bold;padding-left: 15px">Statistics</span>
+          <nz-tabset>
+            <nz-tab nzTitle="Parameters">
+              <div style="width: 100%;height: 90vh;background-color: #cccccc">
+              </div>
+            </nz-tab>
+            <nz-tab nzTitle="Input Connectivity">
+              <div style="width: 100%;height: 90vh;background-color: #cccccc">
+              </div>
+            </nz-tab>
+            <nz-tab nzTitle="OutPut Connectivity">
+              <div style="width: 100%;height: 90vh;background-color: #cccccc">
+              </div>
+            </nz-tab>
+          </nz-tabset>
+        </div>
+      </div>
+      <div class="gridster-item-content" *ngIf="item.ofType === 'cashFlow'">
+        <div class="stuff">
+          <span>CashFlow</span>
+          <div style="width: 80vw;height: 300px;background-color: #96A6BF"></div>
+        </div>
+      </div>
+      <div class="gridster-item-content" *ngIf="item.ofType === 'reporting'">
+        <div class="stuff">
+          <span>Reporting</span>
+          <div style="width: 80vw;height: 300px;background-color: #96A6BF"></div>
+        </div>
+      </div>
+
+    </div>
+  </gridster-item>
+</gridster>
+
 

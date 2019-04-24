@@ -1,5 +1,5 @@
 <div style="display: flex;padding-top: 15px">
-  <div class="resizable" resizable style="border-top: 3px solid blue;padding-top: 15px">
+  <div class="resizable" resizable style="border-top: 3px solid blue;width: 100%;padding-top: 15px">
     <div style="overflow-x: scroll; overflow-y: hidden; width: 100%;">
       <div class="row">
         <div class="col-12" style="margin-bottom: 15px">
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div>
-        <gc-spread-sheets [tabNavigationVisible]="true" [hostStyle]="hostStyle" [backColor]="spreadBackColor" [grayAreaBackColor]="spreadForeColor"
+        <gc-spread-sheets  [hostStyle]="hostStyle" [backColor]="spreadBackColor" [grayAreaBackColor]="spreadForeColor"
                           (workbookInitialized)="workbookInit($event)" >
         </gc-spread-sheets>
       </div>
@@ -32,10 +32,10 @@
     <!--</div>-->
     <div class="grabber" grabber></div>
   </div>
-  <div style="flex: auto" style="border-top: 3px solid deeppink" resizable >
+  <div style="flex: auto" style="border-top: 3px solid deeppink;">
 
 
-    <div class="container-fluid " style="padding-top: 15px;" >
+    <div class="container-fluid " style="padding-top: 15px;">
       <div class="row">
         <div class="col-12">
           <span style="font-weight: bold">Statistics</span>
